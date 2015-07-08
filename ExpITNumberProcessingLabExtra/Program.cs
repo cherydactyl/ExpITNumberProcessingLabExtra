@@ -28,6 +28,7 @@ namespace ExpITNumberProcessingLabExtra
              */
 
             Console.WriteLine("Extra Credit: solve the quadratic equation");
+            Console.WriteLine();    //whitespace
             
             //no error handling; naive processing of input
             int a = Convert.ToInt32(args[0]);
@@ -35,7 +36,7 @@ namespace ExpITNumberProcessingLabExtra
             int c = Convert.ToInt32(args[2]);
 
             //show the equation to be solved, reflecting the arguments as passed in
-            //making it pretty if either or both b and/or c are negative
+            //making it pretty if b and/or c are negative
             Console.WriteLine("Equation to solve:");
             Console.Write(a + "X^2 ");
             if (b < 0)
@@ -54,21 +55,22 @@ namespace ExpITNumberProcessingLabExtra
             {
                 Console.Write("+ " + c);
             }
-            Console.Write(" = 0");
+            Console.WriteLine(" = 0");
 
             Console.WriteLine();    //whitespace
 
-            //check for all 0 coefficients
+            //check for all coefficients being 0's
             if (a == 0 && b == 0 && c == 0)
             {
-                Console.Write("For those values, any X is a solution.  Nice Try.");
-            }   //otheriwse check status of discriminant: negative, zero, or positive
+                Console.WriteLine("For those values, any X is a solution.  Nice Try.");
+            }   
             else
             {   //a, b, and c are not all equal to 0, so proceed
                 //caluculate discriminant
                 int discriminant = (b * b) - (4 * a * c);
                 //Console.WriteLine("Discriminant = " + discriminant);  //for debugging check of discriminant
 
+                //check status of discriminant: negative, zero, or positive
                 if (discriminant < 0)
                 {
                     Console.WriteLine("There is no solution.");
@@ -86,7 +88,7 @@ namespace ExpITNumberProcessingLabExtra
                 }
             }
 
-            Console.WriteLine();    //whitespace
+            //wait until the user is done
             Console.WriteLine();    //whitespace
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
